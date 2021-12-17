@@ -1,0 +1,12 @@
+package br.com.LP1A3.src;
+
+import br.com.LP1A3.Interface.InterfaceMenuPrincipal;
+
+public class Main {
+
+	public static void main(String[] args) {
+		InterfaceMenuPrincipal painel = new InterfaceMenuPrincipal();
+		painel.setInterface();
+	}
+
+}

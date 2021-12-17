@@ -1,0 +1,18 @@
+package br.com.LP1A3.Interface;
+
+import javax.swing.*;
+import java.awt.event.*;
+import br.com.LP1A3.Interface.InterfaceGeral;
+
+public class PainelControler extends InterfaceGeral{
+
+	public PainelControler() {
+		setFrame();
+	}
+	
+	@Override
+	void setInterface() {
+		InterfaceMenuPrincipal interfaceMenu = new InterfaceMenuPrincipal();
+		interfaceMenu.setInterface();
+	}
+}

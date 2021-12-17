@@ -1,0 +1,14 @@
+package br.com.LP1A3.src;
+
+import br.com.LP1A3.Paineis.PainelMenuPrincipal;
+
+public class Main {
+	Voo[] voos = new Voo[10];
+	
+	public static void main(String[] args) {
+		PainelMenuPrincipal menu = new PainelMenuPrincipal();
+		menu.setInterface();
+	}
+
+	
+}

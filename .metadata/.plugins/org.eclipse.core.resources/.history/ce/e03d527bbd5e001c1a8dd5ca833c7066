@@ -1,0 +1,53 @@
+package br.com.LP1A3.Interface;
+
+import javax.swing.*;
+import java.awt.event.*;
+
+public class InterfaceReservaPassagens extends InterfaceGeral implements ActionListener {
+	JButton btFazerReserva, btLugaresVazios, btReservasRealizadas, btVoltar;
+	PainelMenuPrincipal menu = new PainelMenuPrincipal();
+	
+	@Override
+	public void setInterface() {
+		frame.setTitle("Reserva de Passagens");
+
+		btFazerReserva = new JButton("Cadastrar Aeronave");
+		btLugaresVazios = new JButton("Cadastrar Voo");
+		btReservasRealizadas = new JButton("Voltar");
+		btVoltar = new JButton("Voltar");
+
+		btFazerReserva.setBounds(25,100,350,50);
+		btLugaresVazios.setBounds(25,175,350,50);
+		btReservasRealizadas.setBounds(25,250,350,50);
+		btVoltar.setBounds(50,325,300,50);
+		
+		btFazerReserva.addActionListener(this);
+		btLugaresVazios.addActionListener(this);
+		btReservasRealizadas.addActionListener(this);
+		btVoltar.addActionListener(this);
+		
+		frame.add(btFazerReserva);
+		frame.add(btLugaresVazios);
+		frame.add(btReservasRealizadas);
+		frame.add(btVoltar);
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btFazerReserva) {
+			System.out.println("teste cadastrar aeronave");
+		}
+		if (e.getSource() == btLugaresVazios) {
+			System.out.println("teste cadastrar voo");
+		}
+		if (e.getSource() == btReservasRealizadas) {
+			limpaFrame();
+			menu.setInterface();
+		}
+		if (e.getSource() == btVoltar) {
+			limpaFrame();
+			menu.setInterface();
+		}
+	}
+}

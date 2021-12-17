@@ -1,0 +1,44 @@
+package br.com.LP1A3.Interface;
+
+import javax.swing.*;
+import java.awt.event.*;
+import br.com.LP1A3.Interface.InterfaceGeral;
+
+public class PainelControler extends InterfaceGeral implements ActionListener {
+	JButton btParametros, btReservas, btSair;
+	
+	@Override
+	public void setInterface() {
+		frame.setTitle("Menu Principal");
+
+		btParametros = new JButton("Parametros do Sistema");
+		btReservas = new JButton("Reserva de Passagens");
+		btSair = new JButton("Sair");
+		btParametros.setBounds(25,100,350,50);
+		btReservas.setBounds(25,175,350,50);
+		btSair.setBounds(50,250,300,50);
+		
+		btParametros.addActionListener(this);
+		btReservas.addActionListener(this);
+		btSair.addActionListener(this);
+		
+		frame.add(btParametros);
+		frame.add(btReservas);
+		frame.add(btSair);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btParametros) {
+			limpaFrame();
+			InterfaceParametrosSistema parametrosSistema = new InterfaceParametrosSistema();
+			parametrosSistema.setInterface();
+		}
+		if (e.getSource() == btReservas) {
+			System.out.println("teste Reserva");
+		}
+		if (e.getSource() == btSair) {
+			System.exit(0);
+		}
+	}
+}

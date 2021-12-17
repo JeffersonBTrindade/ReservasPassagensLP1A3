@@ -1,0 +1,81 @@
+package br.com.LP1A3.Paineis;
+
+import javax.swing.*;
+
+import br.com.LP1A3.src.Aviao;
+
+import java.awt.event.*;
+
+public class PainelCadastroAvião extends InterfacePainelGeral implements ActionListener {
+	
+	JButton btCadastrarAeronave, btCadastrarVoo, btVoltar;
+	
+	@Override
+	public void setInterface() {
+		frame.setTitle("Cadastro de Avião");
+
+		JLabel modelo = new JLabel("Modelo:");
+		JLabel fileira = new JLabel("Quantidade de fileiras:");
+		JLabel assentos = new JLabel("Quantidade de assentos por fileira:");
+
+		JTextField modeloField = new JTextField();
+		JTextField fileiraField = new JTextField();
+		JTextField assentosField = new JTextField();
+		
+		JButton submit = new JButton("Cadastrar");
+		
+		modelo.setBounds(25,30,325,25);
+		modeloField.setBounds(25,50,325,25);
+		fileira.setBounds(25,100,325,25);
+		fileiraField.setBounds(25,120,70,25);
+		assentos.setBounds(25,170,325,25);
+		assentosField.setBounds(25,190,70,25);
+		submit.setBounds(50, 260, 300, 50);
+		
+		modeloField.addActionListener(this);
+		fileiraField.addActionListener(this);
+		assentosField.addActionListener(this);
+		
+		frame.add(modelo);
+		frame.add(modeloField);
+		frame.add(fileira);
+		frame.add(fileiraField);
+		frame.add(assentos);
+		frame.add(assentosField);
+		frame.add(submit);
+		
+		/*
+		btCadastrarAeronave = new JButton("Cadastrar Aeronave");
+		btCadastrarVoo = new JButton("Cadastrar Voo");
+		btVoltar = new JButton("Voltar");
+		
+		btCadastrarAeronave.setBounds(25,100,350,50);
+		btCadastrarVoo.setBounds(25,175,350,50);
+		btVoltar.setBounds(50,250,300,50);
+		
+		btCadastrarAeronave.addActionListener(this);
+		btCadastrarVoo.addActionListener(this);
+		btVoltar.addActionListener(this);
+		
+		frame.add(btCadastrarAeronave);
+		frame.add(btCadastrarVoo);
+		frame.add(btVoltar);*/
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btCadastrarAeronave) {
+			
+		}
+		
+		if (e.getSource() == btCadastrarVoo) {
+			System.out.println("teste cadastrar voo");
+		}
+		
+		if (e.getSource() == btVoltar) {
+			limpaFrame();
+			PainelMenuPrincipal menu = new PainelMenuPrincipal();
+			menu.setInterface();
+		}
+	}
+}

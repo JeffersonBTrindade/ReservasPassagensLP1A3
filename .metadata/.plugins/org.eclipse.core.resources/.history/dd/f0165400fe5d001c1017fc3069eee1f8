@@ -1,0 +1,32 @@
+package br.com.LP1A3;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Interface {
+	
+	public void setInterfaceMenuPrincipal() {
+		JFrame frame = new JFrame("Menu Principal");
+		frame.setBounds(200,200,400,400);
+		frame.getContentPane().setLayout(null);
+		frame.setVisible(true);
+
+		JButton btParametros = new JButton("Parametros do Sistema");
+		JButton btReservas = new JButton("Reserva de Passagens");
+		JButton btSair = new JButton("Sair");
+		btParametros.setBounds(10,100,350,50);
+		btReservas.setBounds(10,150,350,50);
+		btSair.setBounds(10,200,350,50);
+		
+		frame.add(btParametros);
+		frame.add(btReservas);
+		frame.add(btSair);
+
+		/*frame.getContentPane().add(btReservas);
+		frame.getContentPane().add(btSair);*/
+		
+		
+	}
+	
+}

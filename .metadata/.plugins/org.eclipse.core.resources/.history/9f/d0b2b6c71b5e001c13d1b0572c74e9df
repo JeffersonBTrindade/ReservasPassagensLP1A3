@@ -1,0 +1,43 @@
+package br.com.LP1A3.Interface;
+
+import javax.swing.*;
+import java.awt.event.*;
+
+public class InterfaceReservaPassagens implements ActionListener {
+	JButton btFazerReserva, btLugaresVazios, btReservasRealizadas;
+	InterfaceMenuPrincipal menu = new InterfaceMenuPrincipal();
+	
+	@Override
+	public void setInterface() {
+		frame.setTitle("Parâmetros do Sistema");
+
+		btCadastrarAeronave = new JButton("Cadastrar Aeronave");
+		btCadastrarVoo = new JButton("Cadastrar Voo");
+		btVoltar = new JButton("Voltar");
+		btCadastrarAeronave.setBounds(25,100,350,50);
+		btCadastrarVoo.setBounds(25,175,350,50);
+		btVoltar.setBounds(50,250,300,50);
+		
+		btCadastrarAeronave.addActionListener(this);
+		btCadastrarVoo.addActionListener(this);
+		btVoltar.addActionListener(this);
+		
+		frame.add(btCadastrarAeronave);
+		frame.add(btCadastrarVoo);
+		frame.add(btVoltar);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btCadastrarAeronave) {
+			System.out.println("teste cadastrar aeronave");
+		}
+		if (e.getSource() == btCadastrarVoo) {
+			System.out.println("teste cadastrar voo");
+		}
+		if (e.getSource() == btVoltar) {
+			limpaFrame();
+			menu.setInterface();
+		}
+	}
+}

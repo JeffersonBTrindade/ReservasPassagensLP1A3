@@ -1,0 +1,23 @@
+package br.com.LP1A3.Interface;
+
+import javax.swing.JFrame;
+
+public abstract class InterfaceGeral {
+	static JFrame frame = null;
+	
+	public InterfaceGeral() {
+		if (frame == null) {
+			frame = new JFrame();
+			frame.setBounds(200,200,400,400);
+			frame.getContentPane().setLayout(null);
+			frame.setVisible(true);
+		}
+	}
+	
+	abstract void setInterface();
+	
+	protected void limpaFrame() {
+		frame.getContentPane().removeAll();
+		frame.repaint();
+	}
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="java.lang.StrictMath"/>
+    <fullyQualifiedTypeName name="javax.imageio.plugins.tiff.ExifGPSTagSet"/>
+    <fullyQualifiedTypeName name="javax.management.InvalidAttributeValueException"/>
+    <fullyQualifiedTypeName name="javax.print.DocFlavor"/>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="br.com.LP1A3.Aeronave"/>
+    <fullyQualifiedTypeName name="br.com.LP1A3.Passageiro"/>
+    <fullyQualifiedTypeName name="br.com.LP1A3.texto"/>
+    <fullyQualifiedTypeName name="br.com.LP1A3.Interface"/>
+    <fullyQualifiedTypeName name="br.com.LP1A3.InterfaceMenuPrincipal"/>
+    <fullyQualifiedTypeName name="br.com.LP1A3.Interface.InterfaceParametrosSistema"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.Constructor"/>
+    <fullyQualifiedTypeName name="br.com.LP1A3.Interface.PainelControler"/>
+    <fullyQualifiedTypeName name="br.com.LP1A3.Interface.InterfaceMenuPrincipal"/>
+    <fullyQualifiedTypeName name="br.com.LP1A3.Interface.InterfaceGeral"/>
+    <fullyQualifiedTypeName name="br.com.LP1A3.Interface.InterfaceReservaPassagens"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="br.com.LP1A3.src.Voo"/>
+    <fullyQualifiedTypeName name="br.com.LP1A3.Paineis.PainelCadastroAvião"/>
+    <fullyQualifiedTypeName name="javax.swing.JLabel"/>
+    <fullyQualifiedTypeName name="javax.swing.JFrame"/>
+    <fullyQualifiedTypeName name="javax.swing.JButton"/>
+    <fullyQualifiedTypeName name="java.lang.SuppressWarnings"/>
+    <fullyQualifiedTypeName name="javax.swing.JTextField"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="br.com.LP1A3.src.Aviao"/>
+</qualifiedTypeNameHistroy>

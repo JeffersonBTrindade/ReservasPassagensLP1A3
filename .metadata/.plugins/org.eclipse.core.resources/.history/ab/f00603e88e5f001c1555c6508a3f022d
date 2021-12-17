@@ -1,0 +1,22 @@
+package br.com.LP1A3.src;
+
+import br.com.LP1A3.Paineis.PainelMenuPrincipal;
+import java.awt.event.*;
+
+public class Main implements ActionListener {
+	Voo[] voos = new Voo[10];
+	
+	public static void main(String[] args) {
+		PainelMenuPrincipal menu = new PainelMenuPrincipal();
+		menu.setInterface();
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}
