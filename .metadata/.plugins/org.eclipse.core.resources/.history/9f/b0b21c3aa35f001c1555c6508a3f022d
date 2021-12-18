@@ -10,13 +10,4 @@ public class Main {
 		menu.setInterface();
 		
 	}
-	
-	public void setVoo(Voo voo) {
-		for (int i = 0; i < voos.length; i++) {
-			if (voos[i] == null) {
-				voos[i] = voo;
-				return;
-			}
-		}
-	}
 }

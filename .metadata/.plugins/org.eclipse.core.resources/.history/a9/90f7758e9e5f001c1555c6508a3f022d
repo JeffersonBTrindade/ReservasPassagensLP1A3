@@ -20,8 +20,9 @@ public class PainelParametrosSistema extends InterfacePainelGeral implements Act
 		btCadastrarAeronave.setBounds(25,100,350,50);
 		btCadastrarVoo.setBounds(25,175,350,50);
 		btVoltar.setBounds(50,250,300,50);
+		PainelMenuPrincipal kj = new PainelMenuPrincipal();
 
-		btCadastrarAeronave.addActionListener(this);
+		btCadastrarAeronave.addActionListener(kj);
 		btCadastrarVoo.addActionListener(this);
 		btVoltar.addActionListener(this);
 		
@@ -33,16 +34,18 @@ public class PainelParametrosSistema extends InterfacePainelGeral implements Act
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btCadastrarAeronave) {
+			limpaFrame();
 			PainelCadastroAvião aviao = new PainelCadastroAvião();
 			aviao.setInterface();
+			
 		}
 		
 		if (e.getSource() == btCadastrarVoo) {
-			PainelCadastroVoo voo = new PainelCadastroVoo();
-			voo.setInterface();
+			System.out.println("teste cadastrar voo");
 		}
 		
 		if (e.getSource() == btVoltar) {
+			limpaFrame();
 			PainelMenuPrincipal menu = new PainelMenuPrincipal();
 			menu.setInterface();
 		}

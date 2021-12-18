@@ -8,6 +8,7 @@ public class PainelReservaPassagens extends InterfacePainelGeral implements Acti
 	
 	@Override
 	public void setInterface() {
+		limpaFrame();
 		frame.setTitle("Reserva de Passagens");
 
 		btFazerReserva = new JButton("Fazer reserva");

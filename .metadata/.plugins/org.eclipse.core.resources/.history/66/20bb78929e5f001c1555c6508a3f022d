@@ -1,0 +1,16 @@
+package br.com.LP1A3.src;
+
+import java.util.Iterator;
+
+public class Store {
+	static Aviao[] avioes = new Aviao[10];
+	
+	public void setAviao(Aviao aviao) {
+		for (int i = 0; i < avioes.length; i++) {
+			if (avioes[i].equals(null)) {
+				avioes[i] = aviao;
+				return;
+			}
+		}
+	}
+}

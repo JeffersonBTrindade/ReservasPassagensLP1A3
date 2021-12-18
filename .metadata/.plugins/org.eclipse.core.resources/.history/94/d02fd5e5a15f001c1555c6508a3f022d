@@ -33,16 +33,17 @@ public class PainelParametrosSistema extends InterfacePainelGeral implements Act
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btCadastrarAeronave) {
+			limpaFrame();
 			PainelCadastroAvião aviao = new PainelCadastroAvião();
 			aviao.setInterface();
 		}
 		
 		if (e.getSource() == btCadastrarVoo) {
-			PainelCadastroVoo voo = new PainelCadastroVoo();
-			voo.setInterface();
+			System.out.println("teste cadastrar voo");
 		}
 		
 		if (e.getSource() == btVoltar) {
+			limpaFrame();
 			PainelMenuPrincipal menu = new PainelMenuPrincipal();
 			menu.setInterface();
 		}

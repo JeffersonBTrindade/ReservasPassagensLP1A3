@@ -20,7 +20,9 @@ public class PainelMenuPrincipal extends InterfacePainelGeral implements ActionL
 		btParametros.addActionListener(this);
 		btReservas.addActionListener(this);
 		btSair.addActionListener(this);
-				
+		
+		//btReservas.getText()
+		
 		frame.add(btParametros);
 		frame.add(btReservas);
 		frame.add(btSair);
@@ -30,6 +32,7 @@ public class PainelMenuPrincipal extends InterfacePainelGeral implements ActionL
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btParametros) {
 			limpaFrame();
+			System.out.println(e.getSource().getClass().getName());
 			PainelParametrosSistema parametrosSistema = new PainelParametrosSistema();
 			parametrosSistema.setInterface();
 		}
