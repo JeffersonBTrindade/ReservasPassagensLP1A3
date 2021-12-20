@@ -1,8 +1,7 @@
 package br.com.LP1A3.src;
 
 public class Aviao extends Aeronave{
-
-	Passageiro[][] lugares;
+	Passageiro[][] lugares = new Passageiro[50][50];
 	private int fileiras;
 	private int assentosPorFileira;
 	
@@ -13,7 +12,7 @@ public class Aviao extends Aeronave{
 	}
 	
 	public boolean verificaLugarOcupado(int x, int y) {
-		if(lugares[x][y].getNome().isEmpty()) {
+		if(lugares[x][y] != null) {
 			return false;
 		}
 		
@@ -27,5 +26,13 @@ public class Aviao extends Aeronave{
 	public Passageiro getPassageiro(int x, int y) {
 		Passageiro passageiro = lugares[x][y];
 		return passageiro;
+	}
+	
+	public int getAssentosPorFileira() {
+		return assentosPorFileira;
+	}
+	
+	public int getFileiras() {
+		return fileiras;
 	}
 }

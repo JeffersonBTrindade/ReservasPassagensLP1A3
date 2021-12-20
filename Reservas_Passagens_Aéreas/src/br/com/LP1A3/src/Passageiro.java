@@ -1,4 +1,4 @@
-package br.com.LP1A3.src;
+ package br.com.LP1A3.src;
 
 public class Passageiro {
 

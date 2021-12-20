@@ -1,7 +1,6 @@
 package br.com.LP1A3.Paineis;
 
 import javax.swing.*;
-import javax.swing.GroupLayout.ParallelGroup;
 
 import br.com.LP1A3.src.Aviao;
 import br.com.LP1A3.src.Store;
@@ -52,10 +51,32 @@ public class PainelCadastroAvião extends InterfacePainelGeral implements ActionL
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == submit) {
+		if (e.getSource() == submit) {			
+			int fileiraContent = 0;
+			int assentosContent = 0;
 			String modeloContent = modeloField.getText();
-			int fileiraContent = Integer.parseInt(fileiraField.getText());
-			int assentosContent = Integer.parseInt(assentosField.getText());
+			
+			try {
+				fileiraContent = Integer.parseInt(fileiraField.getText());
+				if (fileiraContent < 1) {
+					System.out.println("O valor deve ser positivo");
+					return;
+				}
+			} catch (Exception eFileira) {
+				System.out.println("Erro ao inserir fileiras: " + eFileira.getMessage());
+				return;
+			}
+			
+			try {
+				assentosContent = Integer.parseInt(assentosField.getText());
+				if (assentosContent < 1) {
+					System.out.println("O valor deve ser positivo");
+					return;
+				}
+			} catch (Exception eAssentos) {
+				System.out.println("Erro ao inserir assentos: " + eAssentos.getMessage());
+				return;
+			}
 			
 			Aviao aviao = new Aviao(modeloContent, fileiraContent, assentosContent);
 			Store store = new Store();

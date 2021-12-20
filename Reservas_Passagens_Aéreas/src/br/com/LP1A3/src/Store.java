@@ -15,4 +15,8 @@ public class Store {
 	public Aviao getAviao(int index) {
 		return avioes[index-1];
 	}
+	
+	public Aviao[] getAvioes() {
+		return avioes;
+	}
 }

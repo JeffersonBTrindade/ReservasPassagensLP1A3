@@ -25,4 +25,8 @@ public class Voo {
 	public String getHora() {
 		return hora;
 	}
+	
+	public Aviao getAviao() {
+		return aviao;
+	}
 }

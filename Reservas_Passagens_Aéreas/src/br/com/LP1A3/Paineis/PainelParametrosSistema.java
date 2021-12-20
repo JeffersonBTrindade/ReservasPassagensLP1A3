@@ -2,13 +2,13 @@ package br.com.LP1A3.Paineis;
 
 import javax.swing.*;
 
-import br.com.LP1A3.src.Aviao;
+import br.com.LP1A3.src.Store;
 
 import java.awt.event.*;
 
 public class PainelParametrosSistema extends InterfacePainelGeral implements ActionListener {
 	JButton btCadastrarAeronave, btCadastrarVoo, btVoltar;
-	
+
 	@Override
 	public void setInterface() {
 		limpaFrame();
@@ -33,11 +33,21 @@ public class PainelParametrosSistema extends InterfacePainelGeral implements Act
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == btCadastrarAeronave) {
+			Store store = new Store();
+			if (store.getAviao(10) != null) {
+				System.out.println("Foi atingido o limite de aviões suportados para cadastro.");
+				return;
+			}
 			PainelCadastroAvião aviao = new PainelCadastroAvião();
 			aviao.setInterface();
 		}
 		
 		if (e.getSource() == btCadastrarVoo) {
+			Store store = new Store();
+			if (store.getAvioes()[0] == null) {
+				System.out.println("Não tem avioes cadastrados");
+				return;
+			}
 			PainelCadastroVoo voo = new PainelCadastroVoo();
 			voo.setInterface();
 		}

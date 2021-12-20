@@ -7,6 +7,10 @@ import br.com.LP1A3.src.Store;
 import br.com.LP1A3.src.Voo;
 
 import java.awt.event.*;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.ResolverStyle;
 
 public class PainelCadastroVoo extends InterfacePainelGeral implements ActionListener {
 	
@@ -18,11 +22,10 @@ public class PainelCadastroVoo extends InterfacePainelGeral implements ActionLis
 		limpaFrame();
 		frame.setTitle("Cadastro de Voo");
 
-		JLabel aviao = new JLabel("Avião:");
-		JLabel modeloAviao = new JLabel("Número do modelo (ex: 1):");
+		JLabel modeloAviao = new JLabel("Número do modelo do Avião (ex: 1):");
 		JLabel numero = new JLabel("Número do voo:");
-		JLabel data = new JLabel("Data:");
-		JLabel hora = new JLabel("Hora:");
+		JLabel data = new JLabel("Data do voo (formato: dd/MM/yyyy):");
+		JLabel hora = new JLabel("Hora do voo: (ex: 12:00)");
 
 		modeloField = new JTextField();
 		numeroField = new JTextField();
@@ -31,16 +34,16 @@ public class PainelCadastroVoo extends InterfacePainelGeral implements ActionLis
 
 		submit = new JButton("Cadastrar");
 		
-		aviao.setBounds(25,10,325,25);
-		modeloAviao.setBounds(25,45,325,25);
-		modeloField.setBounds(25,80,325,25);
-		numero.setBounds(25,125,325,25);
-		numeroField.setBounds(25,170,325,25);
-		data.setBounds(25,215,325,25);
-		dataField.setBounds(25,260,325,25);
-		hora.setBounds(25,305,325,25);
-		horaField.setBounds(25,350,325,25);
-		submit.setBounds(25,395,325,50);
+		modeloAviao.setBounds(25,10,325,25);
+		modeloField.setBounds(25,45,325,25);
+		numero.setBounds(25,80,325,25);
+		numeroField.setBounds(25,115,325,25);
+		data.setBounds(25,150,325,25);
+		dataField.setBounds(25,185,325,25);
+		hora.setBounds(25,220,325,25);
+		horaField.setBounds(25,255,325,25);
+		
+		submit.setBounds(25,295,325,50);
 		
 		modeloField.addActionListener(this);
 		numeroField.addActionListener(this);
@@ -48,7 +51,6 @@ public class PainelCadastroVoo extends InterfacePainelGeral implements ActionLis
 		horaField.addActionListener(this);
 		submit.addActionListener(this);
 		
-		frame.add(aviao);
 		frame.add(modeloAviao);
 		frame.add(modeloField);
 		frame.add(numero);
@@ -64,16 +66,50 @@ public class PainelCadastroVoo extends InterfacePainelGeral implements ActionLis
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == submit) {
 			Main main = new Main();
-			int modelo = Integer.parseInt(modeloField.getText());
-			int numero = Integer.parseInt(numeroField.getText());
-			String data = dataField.getText();
-			String hora = horaField.getText();
-			
 			Store aviao = new Store();
 			
-			Voo voo = new Voo(aviao.getAviao(modelo), numero, data, hora);
+			int modelo = 0;
+			int numero = 0;
+			String dataValida = null;
+			String hora = null;
+			
+			try {
+				modelo = Integer.parseInt(modeloField.getText());
+			} catch (Exception eModelo) {
+				System.out.println("Erro ao inserir modelo: " + eModelo.getMessage());
+				return;
+			}
+		
+			try {
+				numero = Integer.parseInt(numeroField.getText());
+			} catch (Exception eNumero) {
+				System.out.println("Erro ao inserir número do avião: " + eNumero.getMessage());
+				return;
+			}
+	
+			try {
+				DateTimeFormatter dataFormater = DateTimeFormatter.ofPattern("dd/MM/uuuu").withResolverStyle(ResolverStyle.STRICT);
+				dataValida = LocalDate.parse(dataField.getText(), dataFormater).toString();
+			} catch (Exception eData) {
+				System.out.println("Erro ao inserir data: " + eData.getMessage());
+				return;
+			}
+
+			try {
+				SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+				sdf.setLenient(false);
+				hora = sdf.parse(horaField.getText()).toString();
+			} catch (Exception eHora) {
+				System.out.println("Erro ao inserir hora: " + eHora.getMessage());
+				return;
+			}
+					
+			Voo voo = new Voo(aviao.getAviao(modelo), numero, dataValida, hora);
 			
 			main.setVoo(voo);
+			
+			PainelParametrosSistema parametro = new PainelParametrosSistema();
+			parametro.setInterface();
 		}
 	}
 }
